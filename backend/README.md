@@ -10,6 +10,9 @@ This is the backend for the AI Chatbot application. It is built using Node.js, E
 - [API Endpoints](#api-endpoints)
 - [Project Structure](#project-structure)
 - [Dependencies](#dependencies)
+- [License](#license)
+- [Contributing](#contributing)
+- [Acknowledgements](#acknowledgements)
 
 ## Installation
 
@@ -26,17 +29,18 @@ This is the backend for the AI Chatbot application. It is built using Node.js, E
 
 ## Environment Variables
 
-Create a `.env` file in the `backend` directory with the following content:
+Create a `.env` file in the `backend/src` directory with the following content:
 
 ```env
 OPENAI_KEY=your_openai_api_key
 OPENAI_ORG_KEY=your_openai_org_key
-MONGO_URI=mongodb+srv://username:password@cluster0.mongodb.net/chatbot?retryWrites=true&w=majority&appName=Cluster0
+MONGODB_URL=mongodb+srv://username:password@cluster0.mongodb.net/chatbot?retryWrites=true&w=majority&appName=Cluster0
 JWT_KEY=your_jwt_secret
+COOKIE_KEY=your_cookie_secret
 PORT=5001
 ```
 
-Replace `your_openai_api_key`, `your_openai_org_key`, `username`, `password`, and `your_jwt_secret` with your actual credentials and desired JWT secret key.
+Replace `your_openai_api_key`, `your_openai_org_key`, `username`, `password`, `your_jwt_secret`, and `your_cookie_secret` with your actual credentials and desired secrets.
 
 ## Running the Application
 
@@ -123,13 +127,16 @@ backend/
 ## License
 
 This project is licensed under the MIT License.
-```
 
-### Contributing
+## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
 
-### Acknowledgements
+## Acknowledgements
 
 Thanks to the OpenAI team for their API and to the contributors of the various open-source libraries used in this project.
 ```
+
+### Additional Instructions
+
+Ensure that all environment variables are correctly set up in the `.env` file and that the MongoDB connection string is properly configured. This will allow the backend to connect to the MongoDB database and the OpenAI API successfully.
